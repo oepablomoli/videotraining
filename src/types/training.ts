@@ -1,13 +1,22 @@
 export interface Document {
+  id: string;
   title: string;
-  url: string;
+  downloadUrl: string;
 }
 
-export interface TrainingModule {
-  id: number;
+export interface Video {
+  id: string;
   title: string;
-  vimeoId: string;
+  description: string;
+  vimeoId?: string;
+  tags: string[];
   documents: Document[];
 }
 
-export type SidebarItem = 'Dashboard' | 'Contractors' | 'Organization' | `Training-${number}`;
+export interface TrainingCategory {
+  id: string;
+  title: string;
+  videos: Video[];
+}
+
+export type SidebarItem = 'Dashboard' | 'Contractors' | 'Organization' | string;

@@ -1,22 +1,22 @@
 import TrainingNavItem from './TrainingNavItem';
-import type { TrainingModule, SidebarItem } from '../types/training';
+import type { TrainingCategory, SidebarItem } from '../types/training';
 
 interface TrainingListProps {
-  trainingModules: TrainingModule[];
+  trainingCategories: TrainingCategory[];
   activeSidebarItem: SidebarItem;
-  onTrainingSelect: (trainingModule: TrainingModule) => void;
+  onCategorySelect: (category: TrainingCategory) => void;
 }
 
-const TrainingList = ({ trainingModules, activeSidebarItem, onTrainingSelect }: TrainingListProps) => {
+const TrainingList = ({ trainingCategories, activeSidebarItem, onCategorySelect }: TrainingListProps) => {
   return (
     <div>
       <h3 className="px-2 mt-4 mb-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">Training</h3>
-      {trainingModules.map((training) => (
+      {trainingCategories.map((category) => (
         <TrainingNavItem
-          key={training.id}
-          trainingModule={training}
-          isActive={activeSidebarItem === `Training-${training.id}`}
-          onClick={onTrainingSelect}
+          key={category.id}
+          trainingCategory={category}
+          isActive={activeSidebarItem === category.id}
+          onClick={onCategorySelect}
         />
       ))}
     </div>

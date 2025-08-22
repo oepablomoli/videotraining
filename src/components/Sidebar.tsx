@@ -2,20 +2,20 @@ import { LayoutDashboard, Users, Building2 } from 'lucide-react';
 import SidebarHeader from './SidebarHeader';
 import SidebarNavItem from './SidebarNavItem';
 import TrainingList from './TrainingList';
-import type { TrainingModule, SidebarItem } from '../types/training';
+import type { TrainingCategory, SidebarItem } from '../types/training';
 
 interface SidebarProps {
-  trainingModules: TrainingModule[];
+  trainingCategories: TrainingCategory[];
   activeSidebarItem: SidebarItem;
   onSidebarClick: (item: string) => void;
-  onTrainingSelect: (trainingModule: TrainingModule) => void;
+  onCategorySelect: (category: TrainingCategory) => void;
 }
 
 const Sidebar = ({ 
-  trainingModules, 
+  trainingCategories, 
   activeSidebarItem, 
   onSidebarClick, 
-  onTrainingSelect 
+  onCategorySelect 
 }: SidebarProps) => {
   return (
     <aside className="w-64 bg-white border-r border-gray-200 flex flex-col">
@@ -48,9 +48,9 @@ const Sidebar = ({
         />
 
         <TrainingList
-          trainingModules={trainingModules}
+          trainingCategories={trainingCategories}
           activeSidebarItem={activeSidebarItem}
-          onTrainingSelect={onTrainingSelect}
+          onCategorySelect={onCategorySelect}
         />
       </nav>
     </aside>
