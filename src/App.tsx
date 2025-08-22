@@ -17,6 +17,7 @@ export default function App() {
   );
   const [activeSidebarItem, setActiveSidebarItem] = useState<SidebarItem>(trainingCategories[0].id);
   const [showVideoLibrary, setShowVideoLibrary] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   const handleSidebarClick = (item: string) => {
     setActiveSidebarItem(item as SidebarItem);
@@ -43,6 +44,10 @@ export default function App() {
     setShowVideoLibrary(!showVideoLibrary);
   };
 
+  const handleToggleSidebar = () => {
+    setSidebarCollapsed(!sidebarCollapsed);
+  };
+
   return (
     <Layout>
       <Sidebar
@@ -50,9 +55,10 @@ export default function App() {
         activeSidebarItem={activeSidebarItem}
         onSidebarClick={handleSidebarClick}
         onCategorySelect={handleCategorySelect}
+        isCollapsed={sidebarCollapsed}
       />
       
-      <MainContent>
+      <MainContent onToggleSidebar={handleToggleSidebar}>
         <div className="max-w-6xl mx-auto space-y-8">
           {/* Header */}
           <div className="flex items-center justify-between">

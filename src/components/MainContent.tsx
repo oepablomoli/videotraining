@@ -3,12 +3,13 @@ import Header from './Header';
 
 interface MainContentProps {
   children: ReactNode;
+  onToggleSidebar?: () => void;
 }
 
-const MainContent = ({ children }: MainContentProps) => {
+const MainContent = ({ children, onToggleSidebar }: MainContentProps) => {
   return (
     <main className="flex-1 p-8 overflow-y-auto">
-      <Header />
+      <Header onToggleSidebar={onToggleSidebar} />
       {children}
     </main>
   );
