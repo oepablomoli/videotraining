@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Play } from 'lucide-react';
+import { Video as VideoIcon } from 'lucide-react';
 import Layout from './components/Layout';
 import Sidebar from './components/Sidebar';
 import MainContent from './components/MainContent';
@@ -56,19 +56,17 @@ export default function App() {
         <div className="max-w-6xl mx-auto space-y-8">
           {/* Header */}
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-bold text-gray-900">Training</h1>
+            <h1 className="text-2xl font-bold text-gray-900">{selectedCategory.title}</h1>
             <button
               onClick={handleToggleVideoLibrary}
               className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
             >
-              <Play className="h-4 w-4" />
-              {showVideoLibrary ? 'Hide' : 'Browse'} Video Library
+              <VideoIcon className="h-4 w-4" />
+              Video Library
             </button>
           </div>
 
-          {/* Category Title */}
           <div>
-            <h2 className="text-xl font-semibold mb-6 text-gray-900">{selectedCategory.title}</h2>
             
             {/* Video Display */}
             {selectedVideo ? (
