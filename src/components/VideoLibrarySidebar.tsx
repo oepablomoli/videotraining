@@ -83,7 +83,7 @@ const VideoLibrarySidebar = ({
                   type="text"
                   placeholder="Search videos..."
                   value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onChange={(e) => {setSearchQuery(e.target.value);}}
                   className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
               </div>
@@ -96,7 +96,7 @@ const VideoLibrarySidebar = ({
                   {availableTags.map((tag) => (
                     <button
                       key={tag}
-                      onClick={() => handleTagToggle(tag)}
+                      onClick={() => {handleTagToggle(tag);}}
                       className={`px-3 py-1 text-xs font-medium rounded-full border transition-colors ${
                         selectedTags.includes(tag)
                           ? 'bg-blue-500 text-white border-blue-500'
@@ -115,7 +115,7 @@ const VideoLibrarySidebar = ({
               {filteredVideos.map((video) => (
                 <div
                   key={video.id}
-                  onClick={() => handleVideoClick(video)}
+                  onClick={() => {handleVideoClick(video);}}
                   className={`p-4 border rounded-lg cursor-pointer transition-all hover:shadow-md ${
                     selectedVideo?.id === video.id
                       ? 'bg-blue-50 border-blue-200'

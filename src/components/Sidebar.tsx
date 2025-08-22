@@ -36,7 +36,7 @@ const Sidebar = ({
           label="Contractors"
           isActive={activeSidebarItem === 'Contractors'}
           showChevron
-          onClick={() => onSidebarClick('Contractors')}
+          onClick={() => {onSidebarClick('Contractors');}}
         />
         
         <SidebarNavItem

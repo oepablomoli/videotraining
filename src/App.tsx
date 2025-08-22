@@ -85,7 +85,7 @@ export default function App() {
       {/* Video Library Sidebar */}
       <VideoLibrarySidebar
         isOpen={showVideoLibrary}
-        onClose={() => setShowVideoLibrary(false)}
+        onClose={() => {setShowVideoLibrary(false);}}
         videos={selectedCategory.videos}
         selectedVideo={selectedVideo}
         onVideoSelect={handleVideoSelect}

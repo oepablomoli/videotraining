@@ -12,7 +12,7 @@ const TrainingNavItem = ({ trainingCategory, isActive, onClick }: TrainingNavIte
 
   return (
     <button
-      onClick={() => onClick(trainingCategory)}
+      onClick={() => {onClick(trainingCategory);}}
       className={`w-full flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md transition-colors text-left ${
         isActive ? 'bg-blue-500 text-white' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
       }`}
