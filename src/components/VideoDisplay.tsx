@@ -1,13 +1,11 @@
-import React from 'react';
 import type { Video } from '../types/training';
 import DocumentCard from './DocumentCard';
 
 interface VideoDisplayProps {
   video: Video;
-  categoryTitle: string;
 }
 
-const VideoDisplay = ({ video, categoryTitle }: VideoDisplayProps) => {
+const VideoDisplay = ({ video }: VideoDisplayProps) => {
   return (
     <div className="space-y-8">
       {/* Video Header */}

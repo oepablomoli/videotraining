@@ -70,7 +70,7 @@ export default function App() {
             
             {/* Video Display */}
             {selectedVideo ? (
-              <VideoDisplay video={selectedVideo} categoryTitle={selectedCategory.title} />
+              <VideoDisplay video={selectedVideo} />
             ) : (
               <div className="text-center py-12">
                 <p className="text-gray-500">No videos available in this category.</p>
