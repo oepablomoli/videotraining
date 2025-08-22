@@ -28,7 +28,7 @@ const Sidebar = ({
           icon={<LayoutDashboard className="w-5 h-5" />}
           label="Dashboard"
           isActive={activeSidebarItem === 'Dashboard'}
-          onClick={() => onSidebarClick('Dashboard')}
+          onClick={() => {onSidebarClick('Dashboard');}}
         />
         
         <SidebarNavItem
@@ -44,7 +44,7 @@ const Sidebar = ({
           label="Organization"
           isActive={activeSidebarItem === 'Organization'}
           showChevron
-          onClick={() => onSidebarClick('Organization')}
+          onClick={() => {onSidebarClick('Organization');}}
         />
 
         <TrainingList
