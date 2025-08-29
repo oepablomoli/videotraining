@@ -33,9 +33,7 @@ export default function App() {
     }
   };
 
-  const handleVideoSelect = (video: Video) => {
-    setSelectedVideo(video);
-  };
+  // Single video experience; no external video selection needed
 
   const handleToggleSidebar = () => {
     setSidebarCollapsed(!sidebarCollapsed);
