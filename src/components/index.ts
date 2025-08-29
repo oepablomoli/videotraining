@@ -8,5 +8,4 @@ export { default as TrainingNavItem } from './TrainingNavItem';
 export { default as MainContent } from './MainContent';
 export { default as Header } from './Header';
 export { default as VideoDisplay } from './VideoDisplay';
-export { default as VideoLibrarySidebar } from './VideoLibrarySidebar';
 export { default as DocumentCard } from './DocumentCard';

@@ -34,26 +34,12 @@ const VideoDisplay = ({ video }: VideoDisplayProps) => {
         )}
       </div>
 
-      {/* Video Details */}
-      <div className="space-y-4">
-        <p className="text-gray-600">{video.description}</p>
-        
-        <div className="flex flex-wrap gap-2">
-          {video.tags.map((tag) => (
-            <span
-              key={tag}
-              className="px-3 py-1 text-xs font-medium bg-gray-100 text-gray-700 rounded-full"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-      </div>
+      {/* No extra details needed for simplified view */}
 
-      {/* Associated Documents */}
+      {/* Supporting Documents */}
       {video.documents.length > 0 && (
         <div>
-          <h2 className="text-xl font-semibold mb-6 text-gray-900">Associated Documents</h2>
+          <h2 className="text-xl font-semibold mb-6 text-gray-900">Supporting Documents</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {video.documents.map((document) => (
               <DocumentCard key={document.id} document={document} />

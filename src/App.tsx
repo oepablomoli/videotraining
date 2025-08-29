@@ -1,10 +1,8 @@
 import { useState } from 'react';
-import { Video as VideoIcon } from 'lucide-react';
 import Layout from './components/Layout';
 import Sidebar from './components/Sidebar';
 import MainContent from './components/MainContent';
 import VideoDisplay from './components/VideoDisplay';
-import VideoLibrarySidebar from './components/VideoLibrarySidebar';
 import { trainingCategories } from './data/trainingData';
 import type { TrainingCategory, Video, SidebarItem } from './types/training';
 
@@ -16,7 +14,6 @@ export default function App() {
     trainingCategories[0].videos.length > 0 ? trainingCategories[0].videos[0] : null
   );
   const [activeSidebarItem, setActiveSidebarItem] = useState<SidebarItem>(trainingCategories[0].id);
-  const [showVideoLibrary, setShowVideoLibrary] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   const handleSidebarClick = (item: string) => {
@@ -40,10 +37,6 @@ export default function App() {
     setSelectedVideo(video);
   };
 
-  const handleToggleVideoLibrary = () => {
-    setShowVideoLibrary(!showVideoLibrary);
-  };
-
   const handleToggleSidebar = () => {
     setSidebarCollapsed(!sidebarCollapsed);
   };
@@ -63,13 +56,6 @@ export default function App() {
           {/* Header */}
           <div className="flex items-center justify-between">
             <h1 className="text-2xl font-bold text-gray-900">{selectedCategory.title}</h1>
-            <button
-              onClick={handleToggleVideoLibrary}
-              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
-            >
-              <VideoIcon className="h-4 w-4" />
-              Video Library
-            </button>
           </div>
 
           <div>
@@ -86,14 +72,7 @@ export default function App() {
         </div>
       </MainContent>
 
-      {/* Video Library Sidebar */}
-      <VideoLibrarySidebar
-        isOpen={showVideoLibrary}
-        onClose={() => {setShowVideoLibrary(false);}}
-        videos={selectedCategory.videos}
-        selectedVideo={selectedVideo}
-        onVideoSelect={handleVideoSelect}
-      />
+      {/* Removed Video Library Sidebar to keep single video experience */}
     </Layout>
   );
 }
