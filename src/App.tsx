@@ -51,10 +51,7 @@ export default function App() {
       
       <MainContent onToggleSidebar={handleToggleSidebar}>
         <div className="max-w-6xl mx-auto space-y-8">
-          {/* Header */}
-          <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-bold text-gray-900">{selectedCategory.title}</h1>
-          </div>
+          
 
           <div>
             
