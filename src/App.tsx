@@ -9,7 +9,6 @@ import type { TrainingCategory, Video, SidebarItem } from './types/training';
 // --- MAIN APP COMPONENT ---
 export default function App() {
   // State management for the new video-based system
-  const [selectedCategory, setSelectedCategory] = useState<TrainingCategory>(trainingCategories[0]);
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(
     trainingCategories[0].videos.length > 0 ? trainingCategories[0].videos[0] : null
   );
@@ -23,7 +22,6 @@ export default function App() {
   };
   
   const handleCategorySelect = (category: TrainingCategory) => {
-    setSelectedCategory(category);
     setActiveSidebarItem(category.id);
     // Auto-select first video in the category
     if (category.videos.length > 0) {
